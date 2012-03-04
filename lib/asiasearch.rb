@@ -4,9 +4,9 @@ require 'json'
 module AsiaSearch
   class Error < StandardError; end
 
-  def self.config(environment=RAILS_ENV)
+  def self.config(environment=Rails.env)
     @config ||= {}
-    @config[environment] ||= YAML.load(File.open(RAILS_ROOT + '/config/asiasearch.yml').read)[environment]
+    @config[environment] ||= YAML.load(File.open(Rails.root.to_s + '/config/asiasearch.yml').read)[environment]
   end
 
   module Base

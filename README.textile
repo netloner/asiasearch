@@ -20,7 +20,7 @@ It will automate generate indextank.yml to your config/ directory. Please fill u
 <pre>
 <code>
 class Topic < ActiveRecord::Base
-  include Railstank::Search
+  include Railstank::Search #=> WTF is ths? change to AsiaSearch::Base  
   has_keyword :content
 end
 </code>
